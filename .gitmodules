@@ -10,3 +10,7 @@
 	path = meta-openembedded
 	url = https://git.openembedded.org/meta-openembedded
 	branch = scarthgap
+[submodule "meta-ros"]
+	path = meta-ros
+	url = https://github.com/ros/meta-ros.git
+	branch = scarthgap
