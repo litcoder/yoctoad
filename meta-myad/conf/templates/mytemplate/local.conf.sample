@@ -25,6 +25,7 @@ EXTRA_IMAGE_FEATURES ?= "debug-tweaks ssh-server-dropbear"
 
 IMAGE_INSTALL:append = " python3 i2c-tools nano opencv opencv-apps opencv-samples \
     ros-core \
+    ros-workspace \
     ros2cli \
     ros2topic \
     ros2service \

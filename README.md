@@ -6,5 +6,5 @@ git clone git@github.com:litcoder/adproject.git
 git submodule update --init --recursive
 export TEMPLATECONF=${PWD}/meta-myad/conf/templates/mytemplate
 source ./poky/oe-init-build-env build
-bitbake core-image-base
+bitbake ros-image-base
 ```
