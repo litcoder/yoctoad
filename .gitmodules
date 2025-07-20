@@ -14,3 +14,6 @@
 	path = meta-ros
 	url = https://github.com/ros/meta-ros.git
 	branch = scarthgap
+[submodule "meta-qt6"]
+	path = meta-qt6
+	url = git://code.qt.io/yocto/meta-qt6.git

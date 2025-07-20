@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Reaction Game
+Comment=Test your reaction time with E2E GPIO control
+Exec=/usr/bin/reaction_game
+Icon=applications-games
+Terminal=false
+Categories=Game;
+StartupNotify=true
