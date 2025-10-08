@@ -1,11 +1,32 @@
-# Reaction Game
-A reaction game for E2E GPIO control from hardware to application level.
+# ADProject
 
-## Setup and build
+Enables ROS2 and Python running environment on Rasberry-pi5.
+
+## Host Build Tools
+Assuming Ubuntu24.04.
 ```
-git clone git@github.com:litcoder/adproject.git
+sudo apt install chrpath diffstat gawk zstd liblz4-tool
+```
+
+## Clone
+```
+git clone git@github.com:litcoder/yoctoad.git
 git submodule update --init --recursive
-export TEMPLATECONF=${PWD}/meta-reaction-game/conf/templates/mytemplate
-source ./poky/oe-init-build-env build-game
-bitbake reaction-game-image
+```
+
+## Setup and Build
+```
+export YOCTO_HOME=${PWD}
+export TEMPLATECONF=${YOCTO_HOME}/meta-myad/conf/templates/mytemplate
+source ./poky/oe-init-build-env build
+bitbake ros-image-core
+```
+
+## Flash
+
+Note: replace the `/dev/mmcblk0` below with yours, which can be found with `lsblk` command.
+
+```
+export WIC_FILE=$YOCTO_HOME/build/tmp/deploy/images/raspberrypi5/ros-image-core-humble-raspberrypi5.rootfs.wic.bz2
+bzcat $WIC_FILE | sudo dd of=/dev/mmcblk0 bs=4M status=progress conv=fsync
 ```
